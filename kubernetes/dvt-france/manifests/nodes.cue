@@ -22,7 +22,7 @@ manifests: global: namespace: {
 	hoodi: {}
 }
 
-manifests: namespace: {
+manifests: scoped: {
 	mainnet: service: vouch: {}
 	hoodi: service: vouch: {}
 }

@@ -33,7 +33,7 @@ import (
 
 #KubernetesManifests: global: #GlobalKubernetesTypes
 
-#KubernetesManifests: namespace: [string]: #NSKubernetesTypes
-#KubernetesManifests: namespace: [ns=string]: [type=string]: [name=string]: {
+#KubernetesManifests: scoped: [string]: #NSKubernetesTypes
+#KubernetesManifests: scoped: [ns=string]: [type=string]: [name=string]: {
 	metadata: namespace: ns
 }

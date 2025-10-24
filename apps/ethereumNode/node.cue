@@ -15,7 +15,7 @@ import (
 #Node: {
 	config:    #NodeConfig
 	manifests: apps.#KubernetesManifests
-	manifests: namespace: (config.metadata.namespace): {
+	manifests: scoped: (config.metadata.namespace): {
 		statefulSet: [string]: lib.#StatefulSet
 		statefulSet: (config.metadata.name): {
 			#config: {
