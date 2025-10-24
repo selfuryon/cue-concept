@@ -10,7 +10,7 @@ import (
 	image:   string
 	version: string
 
-	subCommand: [...string]
+	command: [...string]
 	options: [...string]
 
 	env: [string]: corev1.#EnvVar
@@ -23,7 +23,7 @@ import (
 
 	image: "\(#config.image):\(#config.version)"
 
-	command: #config.subCommand
+	command: #config.command
 	args:    #config.options
 
 	env: [for k, v in #config.env {name: k, v}]

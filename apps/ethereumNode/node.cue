@@ -2,7 +2,7 @@ package ethereumNode
 
 import (
 	"list"
-	"github.com/selfuryon/cue-concept/lib"
+	"github.com/selfuryon/cue-concept/apps/lib"
 )
 
 #NodeConfig: {
@@ -13,9 +13,9 @@ import (
 
 #Node: {
 	config: #NodeConfig
-	output: {
-		deployment: [string]: lib.#Deployment
-		deployment: (config.metadata.name): {
+	manifests: {
+		statefulSet: [string]: lib.#StatefulSet
+		statefulSet: (config.metadata.name): {
 			#config: {
 				metadata: config.metadata
 
@@ -27,7 +27,7 @@ import (
 							image:   "alpine"
 							version: "3.21"
 
-							subCommand: ["ls"]
+							command: ["ls"]
 							options: list.Concat([
 								[for k, v in config.options if v == null {"\(k)"}],
 								[for k, v in config.options if v != null {"\(k)=\(v)"}],
