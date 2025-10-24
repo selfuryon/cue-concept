@@ -1,7 +1,7 @@
 package lib
 
 #Metadata: {
-	name:       string
-	namespace?: string
+	name:      string
+	namespace: string
 	labels: [string]: string
 }

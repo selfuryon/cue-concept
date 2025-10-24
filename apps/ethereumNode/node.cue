@@ -3,6 +3,7 @@ package ethereumNode
 import (
 	"list"
 	"github.com/selfuryon/cue-concept/apps/lib"
+	"github.com/selfuryon/cue-concept/apps"
 )
 
 #NodeConfig: {
@@ -12,8 +13,9 @@ import (
 }
 
 #Node: {
-	config: #NodeConfig
-	manifests: {
+	config:    #NodeConfig
+	manifests: apps.#KubernetesManifests
+	manifests: namespace: (config.metadata.namespace): {
 		statefulSet: [string]: lib.#StatefulSet
 		statefulSet: (config.metadata.name): {
 			#config: {
