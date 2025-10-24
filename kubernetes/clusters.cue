@@ -1,4 +1,4 @@
-package clusters
+package kubernetes
 
 import (
 	dvtFrance "github.com/selfuryon/cue-concept/kubernetes/dvt-france/manifests"
