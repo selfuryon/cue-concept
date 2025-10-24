@@ -27,4 +27,4 @@ manifests: namespace: {
 	hoodi: service: vouch: {}
 }
 
-manifests: ethereum."dvt-node-01".manifests
+manifests: {for x in ethereum {x.manifests}}
